@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>India Data Lab</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body onload="openmodal()">
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr" style="color:aliceblue; font-size: 15px">Labs</b>
+                    <span class="logo-compact">Labs</span>
+                    <span class="brand-title">
+                        <h1 style="color:aliceblue; text-align: center;">Data Labs</h1>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search On Website" aria-label="Search On Website">
+                        <div class="drop-down animated flipInX d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                                <i class="mdi mdi-bell-outline"></i>
+                                <span class="badge badge-pill gradient-2 badge-primary">3</span>
+                            </a>
+                            <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
+                                <div class="dropdown-content-heading d-flex justify-content-between">
+                                    <span class="">2 New Notifications</span>  
+                                    
+                                </div>
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events near you</h6>
+                                                    <span class="notification-text">Within next 5 days</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Started</h6>
+                                                    <span class="notification-text">One hour ago</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Ended Successfully</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events to Join</h6>
+                                                    <span class="notification-text">After two days</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown d-none d-md-flex">
+                            <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+                                <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()">English</a></li>
+                                        <li><a href="javascript:void()">Hindi</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-c omment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">India Data Labs</li>
+                    <li>
+                        <a  href="./index.html" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Index</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a  href="socialdata.html" aria-expanded="false">
+                           <span class="nav-text">Socio-Component Data</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-people menu-icon"></i> <span class="nav-text">Sociol Components</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="#">Population Aging</a></li>
+                            <li><a href="#">Gender Based Things</a></li>
+                            <li><a href="#">Change In Social Structure</a></li>
+                            <li><a href="#">Sociology</a></li>
+                            <li><a href="#">Administration</a></li>
+                            <li><a href="#">Education</a></li>
+                            <li><a href="#">Conversion To Semi-Urban </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a  href="economicdata.html" aria-expanded="false">
+                           <span class="nav-text">Economic Data</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-book-open menu-icon"></i><span class="nav-text">Economic Asspects</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="#">Inflation Rates</a></li>
+                            <li><a href="#">GDP</a></li>
+                            <li><a href="#">Family income</a></li>
+                            <li><a href="#">Gross National Income</a></li>
+                            <li><a href="#">Capital Stock</a></li>
+                            <li><a href="#">Health Infrastructure</a></li>
+                            <li><a href="#">Consumer Price Index (CPI)</a></li>
+                            <li><a href="#">Cash Surplus/Deficit</a></li>
+                            <li><a href="#">Employment percentage </a></li>
+                            <li><a href="#">Education budget</a></li>
+                            <li><a href="#">Literacy rate</a></li>
+                            <li><a href="#">Schemes beneficiaries</a></li>
+                            <li><a href="#">Land use</a></li>
+                            <li><a href="#">Rural Infrastructure</a></li>
+                            <li><a href="#">Marginal workers</a></li>
+                            <li><a href="#">Line Of Poverty</a></li>
+                            <li><a href="#">Agricultural Employment Rate</a></li>
+                            <li><a href="#">Marginal workers</a></li>
+                            <li><a href="#">Manufacturing And Transportation</a></li>
+                            <li><a href="#">Market Aviability</a></li>
+                            <li><a href="#">Technical Resources</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a  href="environmentdata.html" aria-expanded="false">
+                           <span class="nav-text">Environmental Data</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="has-arrow"  href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Environmental Vectors</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="#">Soil temperature</a></li>
+                            <li><a href="#">CO2 emissions</a></li>
+                            <li><a href="#">Human Population Growth </a></li>
+                            <li><a href="#">Global Temperature</a></li>
+                            <li><a href="#">Humidity</a></li>
+                            <li><a href="#">Precipitation</a></li>
+                            <li><a href="#">Air Pressure</a></li>
+                            <li><a href="#">Water Quality</a></li>
+                            <li><a href="#">Air Quality</a></li>
+                            <li><a href="#">Industrial pollution</a></li>
+                            <li><a href="#">Soil Erosion</a></li>
+                            <li><a href="#">Availability of Crude Oil</a></li>
+                            <li><a href="#">Wind power installed capacity</a></li>
+                            <li><a href="#">Biomass Power</a></li>
+                            <li><a href="#">Crop Production</a></li>
+                            <li><a href="#">Water Availability</a></li>
+                            <li><a href="#">Global liveability</a></li>
+                            <li><a href="#">Biomass Land Degradation Percentage</a></li>
+                            <li><a href="#">Disaster prone</a></li>
+                            <li><a href="#">Sanitation And Hazard</a></li>
+                            <li><a href="#">Drainage Connectivity</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-1">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Social Data Asspects</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white">54+</h2>
+                                    <p class="text-white mb-0">Jan 2011 - June 2021</p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-2">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Environment Vectors</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white">100+</h2>
+                                    <p class="text-white mb-0">Jan 2020 - May 2021</p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-globe"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-3">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Economical Factors</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white">150+</h2>
+                                    <p class="text-white mb-0">Jan 2014 - May 2021</p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card gradient-4">
+                            <div class="card-body">
+                                <h3 class="card-title text-white">Website Analytics</h3>
+                                <div class="d-inline-block">
+                                    <h2 class="text-white">99%</h2>
+                                    <p class="text-white mb-0">May - June 2020</p>
+                                </div>
+                                <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body pb-0 d-flex justify-content-between">
+                                        <div>
+                                            <h4 class="mb-1">India's Enviromental, Economics And Social Data</h4>
+                                            <p>Total Asspects of the Year</p>
+                                            <h3 class="m-0">2015-21</h3>
+                                        </div>
+                                    </div>
+                                    <div class="chart-wrapper">
+                                        <canvas id="chart_widget_2"></canvas>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="w-100 mr-2">
+                                                <h6>Social Data</h6>
+                                                <div class="progress" style="height: 6px">
+                                                    <div class="progress-bar bg-danger" style="width: 40%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-2 w-100">
+                                                <h6>Enviormental Data</h6>
+                                                <div class="progress" style="height: 6px">
+                                                    <div class="progress-bar bg-primary" style="width: 60%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-2 w-100">
+                                                <h6>Economical Data</h6>
+                                                <div class="progress" style="height: 6px">
+                                                    <div class="progress-bar bg-success" style="width: 50%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Detailed Summary</h4>
+                                <div id="morris-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card card-widget">
+                            <div class="card-body">
+                                <h5 class="text-muted">Insights Overview</h5>
+                                <h2 class="mt-4">250+ Asspects</h2>
+                                <span>Total Asspects Covered Till Now</span>
+                                <div class="mt-4">
+                                    <h4>30</h4>
+                                    <h6>Socail Asspects <span class="pull-right">30%</span></h6>
+                                    <div class="progress mb-3" style="height: 7px">
+                                        <div class="progress-bar bg-primary" style="width: 30%;" role="progressbar"><span class="sr-only">30% Order</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h4>60</h4>
+                                    <h6 class="m-t-10 text-muted">Economical Asspects <span class="pull-right">60%</span></h6>
+                                    <div class="progress mb-3" style="height: 7px">
+                                        <div class="progress-bar bg-success" style="width: 60%;" role="progressbar"><span class="sr-only">50% Order</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h4>50</h4>
+                                    <h6 class="m-t-10 text-muted">Enviromental Asspects <span class="pull-right">50%</span></h6>
+                                    <div class="progress mb-3" style="height: 7px">
+                                        <div class="progress-bar bg-warning" style="width: 50%;" role="progressbar"><span class="sr-only">20% Order</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Activity</h4>
+                                <div id="activity">
+                                    <div class="media border-bottom-1 pt-3 pb-3">
+                                        <div class="media-body">
+                                            <h5>New Chart Added</h5>
+                                            <p class="mb-0">Custom Chart Added in Economiacal Section</p>
+                                        </div><span class="text-muted ">June 2, 2020</span>
+                                    </div>
+                                    <div class="media border-bottom-1 pt-3 pb-3">
+                                        <div class="media-body">
+                                            <h5>New Maps Are Listed</h5>
+                                            <p class="mb-0">Maps And Data Add in various sections</p>
+                                        </div><span class="text-muted ">June 5, 2020</span>
+                                    </div>
+                                    <div class="media border-bottom-1 pt-3 pb-3">
+                                        <div class="media-body">
+                                            <h5>3 New Datasets Implemented</h5>
+                                            <p class="mb-0">Datasets regaurding region wise pollution and Air Quality Are in queue.</p>
+                                        </div><span class="text-muted ">June 11, 2020</span>
+                                    </div>
+                                    <div class="media border-bottom-1 pt-3 pb-3">
+                                        <div class="media-body">
+                                            <h5>Website Activity Growth</h5>
+                                            <p class="mb-0">Insighits are groing on various sections.</p>
+                                        </div><span class="text-muted ">June 12, 2020</span>
+                                    </div>
+                                    <div class="media border-bottom-1 pt-3 pb-3">
+                                        <div class="media-body">
+                                            <h5>New Dashboards are Under Review</h5>
+                                            <p class="mb-0">Dashbords are under rewiew section on social data sets.</p>
+                                        </div><span class="text-muted ">June 24, 2020</span>
+                                    </div>
+                                    <div class="media pt-3 pb-3">
+                                        <div class="media-body">
+                                            <h5>Facebook Post 30 Comments</h5>
+                                            <p class="mb-0">I shared this on my fb wall a few months back,</p>
+                                        </div><span class="text-muted ">June 24, 2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="display: none">
+                    <div class="col-xl-6 col-lg-12 col-sm-12 col-xxl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                    <h4 class="card-title mb-0">Store Location</h4>
+                                <div id="world-map" style="height: 470px;"></div>
+                            </div>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="bootstrap-modal">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Select Your State And District</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">State:</label>
+                                    <select class="form-control" id="inputState">
+                                        <option value="SelectState">Select State</option>
+                                        <option value="Andra Pradesh">Andra Pradesh</option>
+                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                        <option value="Assam">Assam</option>
+                                        <option value="Bihar">Bihar</option>
+                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                        <option value="Goa">Goa</option>
+                                        <option value="Gujarat">Gujarat</option>
+                                        <option value="Haryana">Haryana</option>
+                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                        <option value="Jharkhand">Jharkhand</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                        <option value="Kerala">Kerala</option>
+                                        <option value="Madya Pradesh">Madya Pradesh</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                        <option value="Manipur">Manipur</option>
+                                        <option value="Meghalaya">Meghalaya</option>
+                                        <option value="Mizoram">Mizoram</option>
+                                        <option value="Nagaland">Nagaland</option>
+                                        <option value="Orissa">Orissa</option>
+                                        <option value="Punjab">Punjab</option>
+                                        <option value="Rajasthan">Rajasthan</option>
+                                        <option value="Sikkim">Sikkim</option>
+                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                        <option value="Telangana">Telangana</option>
+                                        <option value="Tripura">Tripura</option>
+                                        <option value="Uttaranchal">Uttaranchal</option>
+                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                        <option value="West Bengal">West Bengal</option>
+                                        <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                        <option value="Chandigarh">Chandigarh</option>
+                                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                        <option value="Daman and Diu">Daman and Diu</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Lakshadeep">Lakshadeep</option>
+                                        <option value="Pondicherry">Pondicherry</option>
+                                      </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputDistrict" class="col-form-label">District:</label>
+                                    <select class="form-control" id="inputDistrict">
+                                        <option value="">-- select one -- </option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Search Data</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by <a href="#">Hum 7-7 Hai</a> 2021</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+      
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <Script>
+        function openmodal()
+        {
+            $('#exampleModal').modal('show');
+        }   
+    </Script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        var AndraPradesh = ["Anantapur","Chittoor","East Godavari","Guntur","Kadapa","Krishna","Kurnool","Prakasam","Nellore","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari"];
+        var ArunachalPradesh = ["Anjaw","Changlang","Dibang Valley","East Kameng","East Siang","Kra Daadi","Kurung Kumey","Lohit","Longding","Lower Dibang Valley","Lower Subansiri","Namsai","Papum Pare","Siang","Tawang","Tirap","Upper Siang","Upper Subansiri","West Kameng","West Siang","Itanagar"];
+        var Assam = ["Baksa","Barpeta","Biswanath","Bongaigaon","Cachar","Charaideo","Chirang","Darrang","Dhemaji","Dhubri","Dibrugarh","Goalpara","Golaghat","Hailakandi","Hojai","Jorhat","Kamrup Metropolitan","Kamrup (Rural)","Karbi Anglong","Karimganj","Kokrajhar","Lakhimpur","Majuli","Morigaon","Nagaon","Nalbari","Dima Hasao","Sivasagar","Sonitpur","South Salmara Mankachar","Tinsukia","Udalguri","West Karbi Anglong"];
+        var Bihar = ["Araria","Arwal","Aurangabad","Banka","Begusarai","Bhagalpur","Bhojpur","Buxar","Darbhanga","East Champaran","Gaya","Gopalganj","Jamui","Jehanabad","Kaimur","Katihar","Khagaria","Kishanganj","Lakhisarai","Madhepura","Madhubani","Munger","Muzaffarpur","Nalanda","Nawada","Patna","Purnia","Rohtas","Saharsa","Samastipur","Saran","Sheikhpura","Sheohar","Sitamarhi","Siwan","Supaul","Vaishali","West Champaran"];
+        var Chhattisgarh = ["Balod","Baloda Bazar","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dantewada","Dhamtari","Durg","Gariaband","Janjgir Champa","Jashpur","Kabirdham","Kanker","Kondagaon","Korba","Koriya","Mahasamund","Mungeli","Narayanpur","Raigarh","Raipur","Rajnandgaon","Sukma","Surajpur","Surguja"];
+        var Goa = ["North Goa","South Goa"];
+        var Gujarat = ["Ahmedabad","Amreli","Anand","Aravalli","Banaskantha","Bharuch","Bhavnagar","Botad","Chhota Udaipur","Dahod","Dang","Devbhoomi Dwarka","Gandhinagar","Gir Somnath","Jamnagar","Junagadh","Kheda","Kutch","Mahisagar","Mehsana","Morbi","Narmada","Navsari","Panchmahal","Patan","Porbandar","Rajkot","Sabarkantha","Surat","Surendranagar","Tapi","Vadodara","Valsad"];
+        var Haryana = ["Ambala","Bhiwani","Charkhi Dadri","Faridabad","Fatehabad","Gurugram","Hisar","Jhajjar","Jind","Kaithal","Karnal","Kurukshetra","Mahendragarh","Mewat","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"];
+        var HimachalPradesh = ["Bilaspur","Chamba","Hamirpur","Kangra","Kinnaur","Kullu","Lahaul Spiti","Mandi","Shimla","Sirmaur","Solan","Una"];
+        var JammuKashmir = ["Anantnag","Bandipora","Baramulla","Budgam","Doda","Ganderbal","Jammu","Kargil","Kathua","Kishtwar","Kulgam","Kupwara","Leh","Poonch","Pulwama","Rajouri","Ramban","Reasi","Samba","Shopian","Srinagar","Udhampur"];
+        var Jharkhand = ["Bokaro","Chatra","Deoghar","Dhanbad","Dumka","East Singhbhum","Garhwa","Giridih","Godda","Gumla","Hazaribagh","Jamtara","Khunti","Koderma","Latehar","Lohardaga","Pakur","Palamu","Ramgarh","Ranchi","Sahebganj","Seraikela Kharsawan","Simdega","West Singhbhum"];
+        var Karnataka = ["Bagalkot","Bangalore Rural","Bangalore Urban","Belgaum","Bellary","Bidar","Vijayapura","Chamarajanagar","Chikkaballapur","Chikkamagaluru","Chitradurga","Dakshina Kannada","Davanagere","Dharwad","Gadag","Gulbarga","Hassan","Haveri","Kodagu","Kolar","Koppal","Mandya","Mysore","Raichur","Ramanagara","Shimoga","Tumkur","Udupi","Uttara Kannada","Yadgir"];
+        var Kerala = ["Alappuzha","Ernakulam","Idukki","Kannur","Kasaragod","Kollam","Kottayam","Kozhikode","Malappuram","Palakkad","Pathanamthitta","Thiruvananthapuram","Thrissur","Wayanad"];
+        var MadhyaPradesh = ["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna",
+        "Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"];
+        var Maharashtra = ["Ahmednagar","Akola","Amravati","Aurangabad","Beed","Bhandara","Buldhana","Chandrapur","Dhule","Gadchiroli","Gondia","Hingoli","Jalgaon","Jalna","Kolhapur","Latur","Mumbai City","Mumbai Suburban","Nagpur","Nanded","Nandurbar","Nashik","Osmanabad","Palghar","Parbhani","Pune","Raigad","Ratnagiri","Sangli","Satara","Sindhudurg","Solapur","Thane","Wardha","Washim","Yavatmal"];
+        var Manipur = ["Bishnupur","Chandel","Churachandpur","Imphal East","Imphal West","Jiribam","Kakching","Kamjong","Kangpokpi","Noney","Pherzawl","Senapati","Tamenglong","Tengnoupal","Thoubal","Ukhrul"];
+        var Meghalaya = ["East Garo Hills","East Jaintia Hills","East Khasi Hills","North Garo Hills","Ri Bhoi","South Garo Hills","South West Garo Hills","South West Khasi Hills","West Garo Hills","West Jaintia Hills","West Khasi Hills"];
+        var Mizoram = ["Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip","Aizawl","Champhai","Kolasib","Lawngtlai","Lunglei","Mamit","Saiha","Serchhip"];
+        var Nagaland = ["Dimapur","Kiphire","Kohima","Longleng","Mokokchung","Mon","Peren","Phek","Tuensang","Wokha","Zunheboto"];
+        var Odisha = ["Angul","Balangir","Balasore","Bargarh","Bhadrak","Boudh","Cuttack","Debagarh","Dhenkanal","Gajapati","Ganjam","Jagatsinghpur","Jajpur","Jharsuguda","Kalahandi","Kandhamal","Kendrapara","Kendujhar","Khordha","Koraput","Malkangiri","Mayurbhanj","Nabarangpur","Nayagarh","Nuapada","Puri","Rayagada","Sambalpur","Subarnapur","Sundergarh"];
+        var Punjab = ["Amritsar","Barnala","Bathinda","Faridkot","Fatehgarh Sahib","Fazilka","Firozpur","Gurdaspur","Hoshiarpur","Jalandhar","Kapurthala","Ludhiana","Mansa","Moga","Mohali","Muktsar","Pathankot","Patiala","Rupnagar","Sangrur","Shaheed Bhagat Singh Nagar","Tarn Taran"];
+        var Rajasthan = ["Ajmer","Alwar","Banswara","Baran","Barmer","Bharatpur","Bhilwara","Bikaner","Bundi","Chittorgarh","Churu","Dausa","Dholpur","Dungarpur","Ganganagar","Hanumangarh","Jaipur","Jaisalmer","Jalore","Jhalawar","Jhunjhunu","Jodhpur","Karauli","Kota","Nagaur","Pali","Pratapgarh","Rajsamand","Sawai Madhopur","Sikar","Sirohi","Tonk","Udaipur"];
+        var Sikkim = ["East Sikkim","North Sikkim","South Sikkim","West Sikkim"];
+        var TamilNadu = ["Ariyalur","Chennai","Coimbatore","Cuddalore","Dharmapuri","Dindigul","Erode","Kanchipuram","Kanyakumari","Karur","Krishnagiri","Madurai","Nagapattinam","Namakkal","Nilgiris","Perambalur","Pudukkottai","Ramanathapuram","Salem","Sivaganga","Thanjavur","Theni","Thoothukudi","Tiruchirappalli","Tirunelveli","Tiruppur","Tiruvallur","Tiruvannamalai","Tiruvarur","Vellore","Viluppuram","Virudhunagar"];
+        var Telangana = ["Adilabad","Bhadradri Kothagudem","Hyderabad","Jagtial","Jangaon","Jayashankar","Jogulamba","Kamareddy","Karimnagar","Khammam","Komaram Bheem","Mahabubabad","Mahbubnagar","Mancherial","Medak","Medchal","Nagarkurnool","Nalgonda","Nirmal","Nizamabad","Peddapalli","Rajanna Sircilla","Ranga Reddy","Sangareddy","Siddipet","Suryapet","Vikarabad","Wanaparthy","Warangal Rural","Warangal Urban","Yadadri Bhuvanagiri"];
+        var Tripura = ["Dhalai","Gomati","Khowai","North Tripura","Sepahijala","South Tripura","Unakoti","West Tripura"];
+        var UttarPradesh = ["Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi","Amroha","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur","Hardoi","Hathras","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kasganj","Kaushambi","Kheri","Kushinagar","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","Raebareli","Rampur","Saharanpur","Sambhal","Sant Kabir Nagar","Shahjahanpur","Shamli","Shravasti","Siddharthnagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"];
+        var Uttarakhand  = ["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pauri","Pithoragarh","Rudraprayag","Tehri","Udham Singh Nagar","Uttarkashi"];
+        var WestBengal = ["Alipurduar","Bankura","Birbhum","Cooch Behar","Dakshin Dinajpur","Darjeeling","Hooghly","Howrah","Jalpaiguri","Jhargram","Kalimpong","Kolkata","Malda","Murshidabad","Nadia","North 24 Parganas","Paschim Bardhaman","Paschim Medinipur","Purba Bardhaman","Purba Medinipur","Purulia","South 24 Parganas","Uttar Dinajpur"];
+        var AndamanNicobar = ["Nicobar","North Middle Andaman","South Andaman"];
+        var Chandigarh = ["Chandigarh"];
+        var DadraHaveli = ["Dadra Nagar Haveli"];
+        var DamanDiu = ["Daman","Diu"];
+        var Delhi = ["Central Delhi","East Delhi","New Delhi","North Delhi","North East Delhi","North West Delhi","Shahdara","South Delhi","South East Delhi","South West Delhi","West Delhi"];
+        var Lakshadweep = ["Lakshadweep"];
+        var Puducherry = ["Karaikal","Mahe","Puducherry","Yanam"];
+
+
+        $("#inputState").change(function(){
+        var StateSelected = $(this).val();
+        var optionsList;
+        var htmlString = "";
+
+        switch (StateSelected) {
+            case "Andra Pradesh":
+                optionsList = AndraPradesh;
+                break;
+            case "Arunachal Pradesh":
+                optionsList = ArunachalPradesh;
+                break;
+            case "Assam":
+                optionsList = Assam;
+                break;
+            case "Bihar":
+                optionsList = Bihar;
+                break;
+            case "Chhattisgarh":
+                optionsList = Chhattisgarh;
+                break;
+            case "Goa":
+                optionsList = Goa;
+                break;
+            case  "Gujarat":
+                optionsList = Gujarat;
+                break;
+            case "Haryana":
+                optionsList = Haryana;
+                break;
+            case "Himachal Pradesh":
+                optionsList = HimachalPradesh;
+                break;
+            case "Jammu and Kashmir":
+                optionsList = JammuKashmir;
+                break;
+            case "Jharkhand":
+                optionsList = Jharkhand;
+                break;
+            case  "Karnataka":
+                optionsList = Karnataka;
+                break;
+            case "Kerala":
+                optionsList = Kerala;
+                break;
+            case  "Madya Pradesh":
+                optionsList = MadhyaPradesh;
+                break;
+            case "Maharashtra":
+                optionsList = Maharashtra;
+                break;
+            case  "Manipur":
+                optionsList = Manipur;
+                break;
+            case "Meghalaya":
+                optionsList = Meghalaya ;
+                break;
+            case  "Mizoram":
+                optionsList = Mizoram;
+                break;
+            case "Nagaland":
+                optionsList = Nagaland;
+                break;
+            case  "Orissa":
+                optionsList = Orissa;
+                break;
+            case "Punjab":
+                optionsList = Punjab;
+                break;
+            case  "Rajasthan":
+                optionsList = Rajasthan;
+                break;
+            case "Sikkim":
+                optionsList = Sikkim;
+                break;
+            case  "Tamil Nadu":
+                optionsList = TamilNadu;
+                break;
+            case  "Telangana":
+                optionsList = Telangana;
+                break;
+            case "Tripura":
+                optionsList = Tripura ;
+                break;
+            case  "Uttaranchal":
+                optionsList = Uttaranchal;
+                break;
+            case  "Uttar Pradesh":
+                optionsList = UttarPradesh;
+                break;
+            case "West Bengal":
+                optionsList = WestBengal;
+                break;
+            case  "Andaman and Nicobar Islands":
+                optionsList = AndamanNicobar;
+                break;
+            case "Chandigarh":
+                optionsList = Chandigarh;
+                break;
+            case  "Dadar and Nagar Haveli":
+                optionsList = DadraHaveli;
+                break;
+            case "Daman and Diu":
+                optionsList = DamanDiu;
+                break;
+            case  "Delhi":
+                optionsList = Delhi;
+                break;
+            case "Lakshadeep":
+                optionsList = Lakshadeep ;
+                break;
+            case  "Pondicherry":
+                optionsList = Pondicherry;
+                break;
+        }
+
+
+        for(var i = 0; i < optionsList.length; i++){
+            htmlString = htmlString+"<option value='"+ optionsList[i] +"'>"+ optionsList[i] +"</option>";
+        }
+        $("#inputDistrict").html(htmlString);
+
+        });
+    </script>
+
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+
+    <!-- Chartjs -->
+    <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="./plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="./plugins/d3v3/index.js"></script>
+    <script src="./plugins/topojson/topojson.min.js"></script>
+    <script src="./plugins/datamaps/datamaps.world.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="./plugins/raphael/raphael.min.js"></script>
+    <script src="./plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender
+    <script src="./plugins/moment/moment.min.js"></script>
+    <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script> -->
+    <!-- ChartistJS -->
+    <!-- <script src="./plugins/chartist/js/chartist.min.js"></script>
+    <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script> -->
+
+
+
+    <script src="./js/dashboard/dashboard-1.js"></script>
+
+</body>
+
+</html>

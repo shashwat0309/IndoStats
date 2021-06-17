@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>India Data Lab</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link href="./plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">  
+    <link href="./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <style>
+      .chart--container {
+        min-height: 530px;
+        width: 100%;
+        height: 100%;
+      }
+  
+      .zc-ref {
+        display: none;
+      }
+    </style>
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="index.html">
+                    <b class="logo-abbr" style="color:aliceblue; font-size: 15px">Labs</b>
+                    <span class="logo-compact">Labs</span>
+                    <span class="brand-title">
+                        <h1 style="color:aliceblue; text-align: center;">Data Labs</h1>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search On Website" aria-label="Search On Website">
+                        <div class="drop-down animated flipInX d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <ul class="clearfix">
+                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                                <i class="mdi mdi-bell-outline"></i>
+                                <span class="badge badge-pill gradient-2 badge-primary">3</span>
+                            </a>
+                            <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
+                                <div class="dropdown-content-heading d-flex justify-content-between">
+                                    <span class="">2 New Notifications</span>  
+                                    
+                                </div>
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events near you</h6>
+                                                    <span class="notification-text">Within next 5 days</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Started</h6>
+                                                    <span class="notification-text">One hour ago</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Event Ended Successfully</h6>
+                                                    <span class="notification-text">One hour ago</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void()">
+                                                <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                                <div class="notification-content">
+                                                    <h6 class="notification-heading">Events to Join</h6>
+                                                    <span class="notification-text">After two days</span> 
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="icons dropdown d-none d-md-flex">
+                            <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+                                <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()">English</a></li>
+                                        <li><a href="javascript:void()">Hindi</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-c omment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">India Data Labs</li>
+                    <li>
+                        <a  href="./index.html" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Index</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a  href="socialdata.html" aria-expanded="false">
+                           <span class="nav-text">Socio-Component Data</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-people menu-icon"></i> <span class="nav-text">Sociol Components</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="#">Population Aging</a></li>
+                            <li><a href="#">Gender Based Things</a></li>
+                            <li><a href="#">Change In Social Structure</a></li>
+                            <li><a href="#">Sociology</a></li>
+                            <li><a href="#">Administration</a></li>
+                            <li><a href="#">Education</a></li>
+                            <li><a href="#">Conversion To Semi-Urban </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a  href="economicdata.html" aria-expanded="false">
+                           <span class="nav-text">Economic Data</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-book-open menu-icon"></i><span class="nav-text">Economic Asspects</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="#">Inflation Rates</a></li>
+                            <li><a href="#">GDP</a></li>
+                            <li><a href="#">Family income</a></li>
+                            <li><a href="#">Gross National Income</a></li>
+                            <li><a href="#">Capital Stock</a></li>
+                            <li><a href="#">Health Infrastructure</a></li>
+                            <li><a href="#">Consumer Price Index (CPI)</a></li>
+                            <li><a href="#">Cash Surplus/Deficit</a></li>
+                            <li><a href="#">Employment percentage </a></li>
+                            <li><a href="#">Education budget</a></li>
+                            <li><a href="#">Literacy rate</a></li>
+                            <li><a href="#">Schemes beneficiaries</a></li>
+                            <li><a href="#">Land use</a></li>
+                            <li><a href="#">Rural Infrastructure</a></li>
+                            <li><a href="#">Marginal workers</a></li>
+                            <li><a href="#">Line Of Poverty</a></li>
+                            <li><a href="#">Agricultural Employment Rate</a></li>
+                            <li><a href="#">Marginal workers</a></li>
+                            <li><a href="#">Manufacturing And Transportation</a></li>
+                            <li><a href="#">Market Aviability</a></li>
+                            <li><a href="#">Technical Resources</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a  href="environmentdata.html" aria-expanded="false">
+                           <span class="nav-text">Environmental Data</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="has-arrow"  href="javascript:void()" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Environmental Vectors</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="#">Soil temperature</a></li>
+                            <li><a href="#">CO2 emissions</a></li>
+                            <li><a href="#">Human Population Growth </a></li>
+                            <li><a href="#">Global Temperature</a></li>
+                            <li><a href="#">Humidity</a></li>
+                            <li><a href="#">Precipitation</a></li>
+                            <li><a href="#">Air Pressure</a></li>
+                            <li><a href="#">Water Quality</a></li>
+                            <li><a href="#">Air Quality</a></li>
+                            <li><a href="#">Industrial pollution</a></li>
+                            <li><a href="#">Soil Erosion</a></li>
+                            <li><a href="#">Availability of Crude Oil</a></li>
+                            <li><a href="#">Wind power installed capacity</a></li>
+                            <li><a href="#">Biomass Power</a></li>
+                            <li><a href="#">Crop Production</a></li>
+                            <li><a href="#">Water Availability</a></li>
+                            <li><a href="#">Global liveability</a></li>
+                            <li><a href="#">Biomass Land Degradation Percentage</a></li>
+                            <li><a href="#">Disaster prone</a></li>
+                            <li><a href="#">Sanitation And Hazard</a></li>
+                            <li><a href="#">Drainage Connectivity</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid mt-3">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Social Component Data</h4>
+                                <div class="table-responsive" style="height: 500px;">
+                                    <table class="table table-striped table-bordered zero-configuration">
+                                        <thead>
+                                            <tr>
+                                                <th>Sr. No</th>
+                                                <th>State</th>
+                                                <th>Population</th>
+                                                <th>Operation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Uttar Pradesh</td>
+                                                <td>24 Crores</td>
+                                                <td><button class="btn btn-primary" onclick="utterpradesh()">Show</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Maharashtra</td>
+                                                <td>12.43 Crores</td>
+                                                <td><button class="btn btn-primary" onclick="maharashtra()">Show</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Bihar</td>
+                                                <td>12.70 Crores</td>
+                                                <td><button class="btn btn-primary" onclick="bihar()">Show</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>West Bengal</td>
+                                                <td>10 Crores</td>
+                                                <td><button class="btn btn-primary" onclick="westbengal()">Show</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Madhya Pradesh</td>
+                                                <td>8.70 Crores</td>
+                                                <td><button class="btn btn-primary" onclick="madhyapradesh()">Show</button></td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Sr. No</th>
+                                                <th>State</th>
+                                                <th>Population</th>
+                                                <th>Operation</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="myChart" class="chart--container">
+                                    <a class="zc-ref" href="https://www.zingchart.com/">Powered by Shashwat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Change In Social Structure</h4>
+                                <div id="smil-animations" class="ct-chart ct-golden-section"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Sociology, Administration And Education</h4>
+                                <div id="simple-line-chart" class="ct-chart ct-golden-section"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Conversion To Semi-Urbant</h4>
+                                <div id="bi-polar-bar" class="ct-chart ct-golden-section"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Gender Equality</h4>
+                                <div id="overlapping-bars" class="ct-chart ct-golden-section"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by <a href="#">Hum 7-7 Hai</a> 2021</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+    <script>
+        function utterpradesh()
+        {
+            ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+            let chartConfig = {
+            shapes: [{
+                type: 'zingchart.maps',
+                options: {
+                    bbox: [67.177, 36.494, 98.403, 6.965], // get bbox from zingchart.maps.getItemInfo('world-countries','ind');
+                    ignore: ['IND'], // ignore India because we are rendering a more specific India map below
+                    name: 'world.countries',
+                    panning: false, // turn of zooming. Doesn't work with bounding box
+                    style: {
+                    tooltip: {
+                        borderColor: '#000',
+                        borderWidth: '2px',
+                        fontSize: '18px'
+                    },
+                    controls: {
+                        visible: false // turn of zooming. Doesn't work with bounding box
+                    },
+                    hoverState: {
+                        alpha: .28
+                    }
+                    },
+                    zooming: false // turn of zooming. Doesn't work with bounding box
+                }
+                },
+                {
+                type: 'zingchart.maps',
+                options: {
+                    name: 'ind',
+                    panning: false, // turn of zooming. Doesn't work with bounding box
+                    zooming: false,
+                    scrolling: false,
+                    style: {
+                    tooltip: {
+                        borderColor: '#000',
+                        borderWidth: '2px',
+                        fontSize: '18px'
+                    },
+                    borderColor: '#000',
+                    borderWidth: '2px',
+                    controls: {
+                        visible: false, // turn of zooming. Doesn't work with bounding box
+        
+                    },
+                    hoverState: {
+                        alpha: .28
+                    },
+                    items: {
+                        UP: {
+                        tooltip: {
+                            text: 'UP has 75 Districts And 24 Cr Population Total',
+                            backgroundColor: '#1aa3ff'
+                        },
+                        backgroundColor: '#1aa3ff',
+                        label: {
+                            visible: true
+                        }
+                        },
+                    },
+                    label: { // text displaying. Like valueBox
+                        fontSize: '15px',
+                        visible: false
+                    }
+                    },
+                    zooming: false // turn of zooming. Doesn't work with bounding box
+                }
+                }
+            ]
+            }
+        
+            zingchart.loadModules('maps,maps-ind,maps-world-countries');
+            zingchart.render({
+            id: 'myChart',
+            data: chartConfig,
+            height: '100%',
+            width: '100%',
+            });
+        }
+        function madhyapradesh()
+        {
+            ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+            let chartConfig = {
+            shapes: [{
+                type: 'zingchart.maps',
+                options: {
+                    bbox: [67.177, 36.494, 98.403, 6.965], // get bbox from zingchart.maps.getItemInfo('world-countries','ind');
+                    ignore: ['IND'], // ignore India because we are rendering a more specific India map below
+                    name: 'world.countries',
+                    panning: false, // turn of zooming. Doesn't work with bounding box
+                    style: {
+                    tooltip: {
+                        borderColor: '#000',
+                        borderWidth: '2px',
+                        fontSize: '18px'
+                    },
+                    controls: {
+                        visible: false // turn of zooming. Doesn't work with bounding box
+                    },
+                    hoverState: {
+                        alpha: .28
+                    }
+                    },
+                    zooming: false // turn of zooming. Doesn't work with bounding box
+                }
+                },
+                {
+                type: 'zingchart.maps',
+                options: {
+                    name: 'ind',
+                    panning: false, // turn of zooming. Doesn't work with bounding box
+                    zooming: false,
+                    scrolling: false,
+                    style: {
+                    tooltip: {
+                        borderColor: '#000',
+                        borderWidth: '2px',
+                        fontSize: '18px'
+                    },
+                    borderColor: '#000',
+                    borderWidth: '2px',
+                    controls: {
+                        visible: false, // turn of zooming. Doesn't work with bounding box
+        
+                    },
+                    hoverState: {
+                        alpha: .28
+                    },
+                    items: {
+                        MP: {
+                        tooltip: {
+                            text: 'MP has 52 Districts And 7.33 Cr Population Total',
+                            backgroundColor: '#ff5722'
+                        },
+                        backgroundColor: '#ff5722',
+                        label: {
+                            visible: true
+                        }
+                        },
+                    },
+                    label: { // text displaying. Like valueBox
+                        fontSize: '15px',
+                        visible: false
+                    }
+                    },
+                    zooming: false // turn of zooming. Doesn't work with bounding box
+                }
+                }
+            ]
+            }
+        
+            zingchart.loadModules('maps,maps-ind,maps-world-countries');
+            zingchart.render({
+            id: 'myChart',
+            data: chartConfig,
+            height: '100%',
+            width: '100%',
+            });
+        }
+        function maharashtra()
+        {
+            ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+            let chartConfig = {
+            shapes: [{
+                type: 'zingchart.maps',
+                options: {
+                    bbox: [67.177, 36.494, 98.403, 6.965], // get bbox from zingchart.maps.getItemInfo('world-countries','ind');
+                    ignore: ['IND'], // ignore India because we are rendering a more specific India map below
+                    name: 'world.countries',
+                    panning: false, // turn of zooming. Doesn't work with bounding box
+                    style: {
+                    tooltip: {
+                        borderColor: '#000',
+                        borderWidth: '2px',
+                        fontSize: '18px'
+                    },
+                    controls: {
+                        visible: false // turn of zooming. Doesn't work with bounding box
+                    },
+                    hoverState: {
+                        alpha: .28
+                    }
+                    },
+                    zooming: false // turn of zooming. Doesn't work with bounding box
+                }
+                },
+                {
+                type: 'zingchart.maps',
+                options: {
+                    name: 'ind',
+                    panning: false, // turn of zooming. Doesn't work with bounding box
+                    zooming: false,
+                    scrolling: false,
+                    style: {
+                    tooltip: {
+                        borderColor: '#000',
+                        borderWidth: '2px',
+                        fontSize: '18px'
+                    },
+                    borderColor: '#000',
+                    borderWidth: '2px',
+                    controls: {
+                        visible: false, // turn of zooming. Doesn't work with bounding box
+        
+                    },
+                    hoverState: {
+                        alpha: .28
+                    },
+                    items: {
+                        MH: {
+                        tooltip: {
+                            text: 'Maharshtra has 36 Districts And 8.73 Cr Population Total',
+                            backgroundColor: '#ff1a1a'
+                        },
+                        backgroundColor: '#ff1a1a',
+                        label: {
+                            visible: true
+                        }
+                        },
+                    },
+                    label: { // text displaying. Like valueBox
+                        fontSize: '15px',
+                        visible: false
+                    }
+                    },
+                    zooming: false // turn of zooming. Doesn't work with bounding box
+                }
+                }
+            ]
+            }
+        
+            zingchart.loadModules('maps,maps-ind,maps-world-countries');
+            zingchart.render({
+            id: 'myChart',
+            data: chartConfig,
+            height: '100%',
+            width: '100%',
+            });
+        }
+        function bihar()
+        {
+            ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+            let chartConfig = {
+            shapes: [{
+                type: 'zingchart.maps',
+                options: {
+                    bbox: [67.177, 36.494, 98.403, 6.965], // get bbox from zingchart.maps.getItemInfo('world-countries','ind');
+                    ignore: ['IND'], // ignore India because we are rendering a more specific India map below
+                    name: 'world.countries',
+                    panning: false, // turn of zooming. Doesn't work with bounding box
+                    style: {
+                    tooltip: {
+                        borderColor: '#000',
+                        borderWidth: '2px',
+                        fontSize: '18px'
+                    },
+                    controls: {
+                        visible: false // turn of zooming. Doesn't work with bounding box
+                    },
+                    hoverState: {
+                        alpha: .28
+                    }
+                    },
+                    zooming: false // turn of zooming. Doesn't work with bounding box
+                }
+                },
+                {
+                type: 'zingchart.maps',
+                options: {
+                    name: 'ind',
+                    panning: false, // turn of zooming. Doesn't work with bounding box
+                    zooming: false,
+                    scrolling: false,
+                    style: {
+                    tooltip: {
+                        borderColor: '#000',
+                        borderWidth: '2px',
+                        fontSize: '18px'
+                    },
+                    borderColor: '#000',
+                    borderWidth: '2px',
+                    controls: {
+                        visible: false, // turn of zooming. Doesn't work with bounding box
+        
+                    },
+                    hoverState: {
+                        alpha: .28
+                    },
+                    items: {
+                        BR: {
+                        tooltip: {
+                            text: 'Bihar has 36 Districts And 12.70 Cr Population Total',
+                            backgroundColor: '#88ff4d'
+                        },
+                        backgroundColor: '#88ff4d',
+                        label: {
+                            visible: true
+                        }
+                        },
+                    },
+                    label: { // text displaying. Like valueBox
+                        fontSize: '15px',
+                        visible: false
+                    }
+                    },
+                    zooming: false // turn of zooming. Doesn't work with bounding box
+                }
+                }
+            ]
+            }
+        
+            zingchart.loadModules('maps,maps-ind,maps-world-countries');
+            zingchart.render({
+            id: 'myChart',
+            data: chartConfig,
+            height: '100%',
+            width: '100%',
+            });
+        }
+        function westbengal()
+        {
+            ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+            let chartConfig = {
+            shapes: [{
+                type: 'zingchart.maps',
+                options: {
+                    bbox: [67.177, 36.494, 98.403, 6.965], // get bbox from zingchart.maps.getItemInfo('world-countries','ind');
+                    ignore: ['IND'], // ignore India because we are rendering a more specific India map below
+                    name: 'world.countries',
+                    panning: false, // turn of zooming. Doesn't work with bounding box
+                    style: {
+                    tooltip: {
+                        borderColor: '#000',
+                        borderWidth: '2px',
+                        fontSize: '18px'
+                    },
+                    controls: {
+                        visible: false // turn of zooming. Doesn't work with bounding box
+                    },
+                    hoverState: {
+                        alpha: .28
+                    }
+                    },
+                    zooming: false // turn of zooming. Doesn't work with bounding box
+                }
+                },
+                {
+                type: 'zingchart.maps',
+                options: {
+                    name: 'ind',
+                    panning: false, // turn of zooming. Doesn't work with bounding box
+                    zooming: false,
+                    scrolling: false,
+                    style: {
+                    tooltip: {
+                        borderColor: '#000',
+                        borderWidth: '2px',
+                        fontSize: '18px'
+                    },
+                    borderColor: '#000',
+                    borderWidth: '2px',
+                    controls: {
+                        visible: false, // turn of zooming. Doesn't work with bounding box
+        
+                    },
+                    hoverState: {
+                        alpha: .28
+                    },
+                    items: {
+                        WB: {
+                        tooltip: {
+                            text: 'West Bengal has 23 Districts And 10 Cr Population Total',
+                            backgroundColor: '#ff3399'
+                        },
+                        backgroundColor: '#ff3399',
+                        label: {
+                            visible: true
+                        }
+                        },
+                    },
+                    label: { // text displaying. Like valueBox
+                        fontSize: '15px',
+                        visible: false
+                    }
+                    },
+                    zooming: false // turn of zooming. Doesn't work with bounding box
+                }
+                }
+            ]
+            }
+        
+            zingchart.loadModules('maps,maps-ind,maps-world-countries');
+            zingchart.render({
+            id: 'myChart',
+            data: chartConfig,
+            height: '100%',
+            width: '100%',
+            });
+        }
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+        let chartConfig = {
+          shapes: [{
+              type: 'zingchart.maps',
+              options: {
+                bbox: [67.177, 36.494, 98.403, 6.965], // get bbox from zingchart.maps.getItemInfo('world-countries','ind');
+                ignore: ['IND'], // ignore India because we are rendering a more specific India map below
+                name: 'world.countries',
+                panning: false, // turn of zooming. Doesn't work with bounding box
+                style: {
+                  tooltip: {
+                    borderColor: '#000',
+                    borderWidth: '2px',
+                    fontSize: '18px'
+                  },
+                  controls: {
+                    visible: false // turn of zooming. Doesn't work with bounding box
+                  },
+                  hoverState: {
+                    alpha: .28
+                  }
+                },
+                zooming: false // turn of zooming. Doesn't work with bounding box
+              }
+            },
+            {
+              type: 'zingchart.maps',
+              options: {
+                name: 'ind',
+                panning: false, // turn of zooming. Doesn't work with bounding box
+                zooming: false,
+                scrolling: false,
+                style: {
+                  tooltip: {
+                    borderColor: '#000',
+                    borderWidth: '2px',
+                    fontSize: '18px'
+                  },
+                  borderColor: '#000',
+                  borderWidth: '2px',
+                  controls: {
+                    visible: false, // turn of zooming. Doesn't work with bounding box
+    
+                  },
+                  hoverState: {
+                    alpha: .28
+                  },
+                  items: {
+                  
+                  },
+                  label: { // text displaying. Like valueBox
+                    fontSize: '15px',
+                    visible: false
+                  }
+                },
+                zooming: false // turn of zooming. Doesn't work with bounding box
+              }
+            }
+          ]
+        }
+    
+        zingchart.loadModules('maps,maps-ind,maps-world-countries');
+        zingchart.render({
+          id: 'myChart',
+          data: chartConfig,
+          height: '100%',
+          width: '100%',
+        });
+    </script>
+
+    <!-- Chartjs -->
+    <script src="./plugins/chart.js/Chart.bundle.min.js"></script>
+    <!-- Circle progress -->
+    <script src="./plugins/circle-progress/circle-progress.min.js"></script>
+    <!-- Datamap -->
+    <script src="./plugins/d3v3/index.js"></script>
+    <script src="./plugins/topojson/topojson.min.js"></script>
+    <script src="./plugins/datamaps/datamaps.world.min.js"></script>
+    <!-- Morrisjs -->
+    <script src="./plugins/raphael/raphael.min.js"></script>
+    <script src="./plugins/morris/morris.min.js"></script>
+    <!-- Pignose Calender -->
+    <script src="./plugins/moment/moment.min.js"></script>
+    <script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+    <script src="./plugins/tables/js/jquery.dataTables.min.js"></script>
+    <script src="./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>   
+     <!-- ChartistJS -->
+     <script src="./plugins/chartist/js/chartist.min.js"></script>
+     <script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+     <script src="./js/plugins-init/chartist.init.js"></script>
+
+</body>
+
+</html>
